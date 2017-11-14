@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A0089CB41FBB1CC600244E29 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0089CB31FBB1CC600244E29 /* ChatVC.swift */; };
+		A0089CB61FBB1CDB00244E29 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0089CB51FBB1CDB00244E29 /* ChannelVC.swift */; };
 		A05FA7A71FBA2A2600B2D35A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05FA7A61FBA2A2600B2D35A /* AppDelegate.swift */; };
-		A05FA7A91FBA2A2600B2D35A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05FA7A81FBA2A2600B2D35A /* ViewController.swift */; };
 		A05FA7AC1FBA2A2600B2D35A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A05FA7AA1FBA2A2600B2D35A /* Main.storyboard */; };
 		A05FA7AE1FBA2A2600B2D35A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A05FA7AD1FBA2A2600B2D35A /* Assets.xcassets */; };
 		A05FA7B11FBA2A2600B2D35A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A05FA7AF1FBA2A2600B2D35A /* LaunchScreen.storyboard */; };
@@ -18,9 +19,10 @@
 
 /* Begin PBXFileReference section */
 		995D23F1DF7698837E55716F /* Pods-Smack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.debug.xcconfig"; sourceTree = "<group>"; };
+		A0089CB31FBB1CC600244E29 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		A0089CB51FBB1CDB00244E29 /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
 		A05FA7A31FBA2A2600B2D35A /* Smack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A05FA7A61FBA2A2600B2D35A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A05FA7A81FBA2A2600B2D35A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A05FA7AB1FBA2A2600B2D35A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A05FA7AD1FBA2A2600B2D35A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A05FA7B01FBA2A2600B2D35A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +55,29 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A0089CB01FBB1C8300244E29 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A0089CB31FBB1CC600244E29 /* ChatVC.swift */,
+				A0089CB51FBB1CDB00244E29 /* ChannelVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A0089CB11FBB1C8900244E29 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A0089CB21FBB1C8E00244E29 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A05FA79A1FBA2A2600B2D35A = {
 			isa = PBXGroup;
 			children = (
@@ -75,8 +100,10 @@
 		A05FA7A51FBA2A2600B2D35A /* Smack */ = {
 			isa = PBXGroup;
 			children = (
+				A0089CB21FBB1C8E00244E29 /* Model */,
+				A0089CB11FBB1C8900244E29 /* View */,
+				A0089CB01FBB1C8300244E29 /* Controller */,
 				A05FA7A61FBA2A2600B2D35A /* AppDelegate.swift */,
-				A05FA7A81FBA2A2600B2D35A /* ViewController.swift */,
 				A05FA7AA1FBA2A2600B2D35A /* Main.storyboard */,
 				A05FA7AD1FBA2A2600B2D35A /* Assets.xcassets */,
 				A05FA7AF1FBA2A2600B2D35A /* LaunchScreen.storyboard */,
@@ -227,7 +254,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A05FA7A91FBA2A2600B2D35A /* ViewController.swift in Sources */,
+				A0089CB61FBB1CDB00244E29 /* ChannelVC.swift in Sources */,
+				A0089CB41FBB1CC600244E29 /* ChatVC.swift in Sources */,
 				A05FA7A71FBA2A2600B2D35A /* AppDelegate.swift in Sources */,
 				A0FD11411FBA39DA00AC726B /* SWRevealViewController.m in Sources */,
 			);
