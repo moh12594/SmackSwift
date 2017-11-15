@@ -1,5 +1,5 @@
 //
-//  LoginVC.swift
+//  SignUpVC.swift
 //  Smack
 //
 //  Created by Mohamed SADAT on 15/11/2017.
@@ -8,20 +8,16 @@
 
 import UIKit
 
-class LoginVC: UIViewController {
+class SignUpVC: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    UIApplication.shared.statusBarStyle = .default
+
   }
-  
-  
+
   @IBAction func closeButtonPressed(_ sender: Any) {
-    dismiss(animated: true, completion: nil)
+    performSegue(withIdentifier: UNWIND, sender: nil)
     UIApplication.shared.statusBarStyle = .lightContent
   }
   
-  @IBAction func signUpButtonPressed(_ sender: Any) {
-    performSegue(withIdentifier: TO_SIGNUP, sender: nil)
-  }
 }
