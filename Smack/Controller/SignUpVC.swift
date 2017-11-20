@@ -26,6 +26,12 @@ class SignUpVC: UIViewController {
 
   }
 
+  override func viewDidAppear(_ animated: Bool) {
+    if UserDataService.instance.avatarName != "" {
+      profileImage.image = UIImage(named: UserDataService.instance.avatarName)
+      avatarName = UserDataService.instance.avatarName
+    }
+  }
   @IBAction func closeButtonPressed(_ sender: Any) {
     performSegue(withIdentifier: UNWIND, sender: nil)
     UIApplication.shared.statusBarStyle = .lightContent
