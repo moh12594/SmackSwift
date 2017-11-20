@@ -56,6 +56,7 @@ class SignUpVC: UIViewController {
               if success {
                 self.spinner.isHidden = true
                 self.spinner.stopAnimating()
+                UIApplication.shared.statusBarStyle = .lightContent
                 self.performSegue(withIdentifier: UNWIND, sender: nil)
                 NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
               }
