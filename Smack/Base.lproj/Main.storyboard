@@ -588,6 +588,7 @@
                     </view>
                     <connections>
                         <outlet property="menuButton" destination="sZ3-KU-eIE" id="8x7-Rn-HZl"/>
+                        <outlet property="titleLabel" destination="4YM-Kg-Ecj" id="JWq-Mm-ick"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zFI-le-JkD" userLabel="First Responder" sceneMemberID="firstResponder"/>
