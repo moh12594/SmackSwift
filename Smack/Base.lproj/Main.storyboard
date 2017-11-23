@@ -656,6 +656,12 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fB7-a6-q4E">
+                                <rect key="frame" x="8" y="621" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -663,6 +669,7 @@
                             <constraint firstItem="z6z-X7-Sdg" firstAttribute="centerY" secondItem="1hb-qN-2qj" secondAttribute="centerY" id="JyK-aC-A5q"/>
                             <constraint firstItem="Zax-nb-mgz" firstAttribute="trailing" secondItem="1hb-qN-2qj" secondAttribute="trailing" id="R3D-tR-Pze"/>
                             <constraint firstItem="gZ2-np-Cla" firstAttribute="trailing" secondItem="Zax-nb-mgz" secondAttribute="trailing" id="S1p-rt-6lU"/>
+                            <constraint firstItem="fB7-a6-q4E" firstAttribute="leading" secondItem="Zax-nb-mgz" secondAttribute="leading" constant="8" id="TDf-UC-EP9"/>
                             <constraint firstItem="gZ2-np-Cla" firstAttribute="top" secondItem="ws5-RH-mn1" secondAttribute="top" id="VCy-4b-bE6"/>
                             <constraint firstItem="Zax-nb-mgz" firstAttribute="trailing" secondItem="z6z-X7-Sdg" secondAttribute="trailing" constant="8" id="XIL-yx-Pg8"/>
                             <constraint firstItem="gZ2-np-Cla" firstAttribute="leading" secondItem="Zax-nb-mgz" secondAttribute="leading" id="XTb-Dv-Cts"/>
@@ -670,6 +677,7 @@
                             <constraint firstItem="1hb-qN-2qj" firstAttribute="top" secondItem="iRs-jQ-Ogc" secondAttribute="bottom" constant="30" id="e2O-Y4-eLS"/>
                             <constraint firstItem="1hb-qN-2qj" firstAttribute="bottom" secondItem="Zax-nb-mgz" secondAttribute="bottom" id="ehg-2C-GUQ"/>
                             <constraint firstItem="iRs-jQ-Ogc" firstAttribute="leading" secondItem="Zax-nb-mgz" secondAttribute="leading" id="j19-3P-dDU"/>
+                            <constraint firstItem="1hb-qN-2qj" firstAttribute="top" secondItem="fB7-a6-q4E" secondAttribute="bottom" constant="6" id="qiu-qe-VUz"/>
                             <constraint firstItem="iRs-jQ-Ogc" firstAttribute="trailing" secondItem="Zax-nb-mgz" secondAttribute="trailing" id="yzB-1R-Woo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Zax-nb-mgz"/>
@@ -680,6 +688,7 @@
                         <outlet property="messagesTable" destination="iRs-jQ-Ogc" id="qa6-v2-AUx"/>
                         <outlet property="sendButton" destination="z6z-X7-Sdg" id="AlQ-E9-pQK"/>
                         <outlet property="titleLabel" destination="4YM-Kg-Ecj" id="JWq-Mm-ick"/>
+                        <outlet property="typingLabel" destination="fB7-a6-q4E" id="Klg-9W-4MX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zFI-le-JkD" userLabel="First Responder" sceneMemberID="firstResponder"/>
