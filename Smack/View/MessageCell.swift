@@ -27,5 +27,4 @@ class MessageCell: UITableViewCell {
     userImage.image = UIImage(named: message.userAvatar)
     userImage.backgroundColor = UserDataService.instance.returnUIColor(components: message.userAvatarColor)
   }
-
 }

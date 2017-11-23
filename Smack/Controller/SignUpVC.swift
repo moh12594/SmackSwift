@@ -24,7 +24,6 @@ class SignUpVC: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupView()
-
   }
 
   override func viewDidAppear(_ animated: Bool) {
@@ -47,7 +46,6 @@ class SignUpVC: UIViewController {
     guard let name = userNameText.text, userNameText.text != "" else {return}
     guard let email = emailText.text, emailText.text != "" else {return}
     guard let password = passwordText.text, passwordText.text != "" else {return}
-    
     AuthService.instance.registerUser(email: email, password: password) { (success) in
       if success {
         AuthService.instance.loginUser(email: email, password: password, completion: { (success) in
@@ -88,7 +86,6 @@ class SignUpVC: UIViewController {
     userNameText.attributedPlaceholder = NSAttributedString(string: "Username", attributes: [NSAttributedStringKey.foregroundColor: smackPurplePlaceHolder])
     emailText.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedStringKey.foregroundColor: smackPurplePlaceHolder])
     passwordText.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedStringKey.foregroundColor: smackPurplePlaceHolder])
-    
     let tap = UITapGestureRecognizer(target: self, action: #selector(SignUpVC.handleTap))
     view.addGestureRecognizer(tap)
   }

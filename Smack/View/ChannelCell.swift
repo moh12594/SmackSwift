@@ -17,7 +17,7 @@ class ChannelCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+  
   override func setSelected(_ selected: Bool, animated: Bool) {
     super.setSelected(selected, animated: animated)
 
@@ -40,7 +40,5 @@ class ChannelCell: UITableViewCell {
         channelName.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
       }
     }
-    
   }
-  
 }

@@ -33,10 +33,8 @@ class LoginVC: UIViewController {
   @IBAction func loginButtonPressed(_ sender: Any) {
     spinner.isHidden = false
     spinner.startAnimating()
-    
     guard let userName = userNameText.text , userNameText.text != "" else {return}
     guard let password = passwordText.text , passwordText.text != "" else {return}
-    
     AuthService.instance.loginUser(email: userName, password: password) { (success) in
       if success {
         AuthService.instance.findUserByEmail(completion: { (success) in
@@ -50,7 +48,6 @@ class LoginVC: UIViewController {
         })
       }
     }
-    
   }
   
   func setUpView() {
@@ -59,5 +56,4 @@ class LoginVC: UIViewController {
     userNameText.attributedPlaceholder = NSAttributedString(string: "Username", attributes: [NSAttributedStringKey.foregroundColor: smackPurplePlaceHolder])
     passwordText.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedStringKey.foregroundColor: smackPurplePlaceHolder])
   }
-  
 }

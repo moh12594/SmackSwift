@@ -44,14 +44,11 @@ class AuthService {
   }
   
   func registerUser(email: String, password: String, completion: @escaping CompletionHandler) {
-    
     let lowerCaseEmail = email.lowercased()
-    
     let body: [String: Any] = [
       "email": lowerCaseEmail,
       "password": password
     ]
-    
     Alamofire.request(URL_REGISTER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseString { (response) in
       if response.result.error == nil {
         completion(true)
@@ -60,25 +57,20 @@ class AuthService {
         debugPrint(response.result.error as Any)
       }
     }
-    
   }
   
   func loginUser(email: String, password: String, completion: @escaping CompletionHandler) {
     let lowerCaseEmail = email.lowercased()
-    
     let body: [String: Any] = [
       "email": lowerCaseEmail,
       "password": password
     ]
-    
     Alamofire.request(URL_LOGIN, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
-      
       if response.result.error == nil {
         guard let data = response.data else { return }
         let json = JSON(data: data)
         self.userEmail = json["user"].stringValue
         self.authToken = json["token"].stringValue
-        
         self.isLoggedIn = true
         completion(true)
       } else {
@@ -86,19 +78,16 @@ class AuthService {
         debugPrint(response.result.error as Any)
       }
     }
-    
   }
   
   func createUser(name: String, email: String, avatarName: String, avatarColor: String, completion: @escaping CompletionHandler) {
     let lowerCaseEmail = email.lowercased()
-    
     let body: [String: Any] = [
       "name": name,
       "email": lowerCaseEmail,
       "avatarName": avatarName,
       "avatarColor": avatarColor
     ]
-    
     Alamofire.request(URL_CREATE, method: .post, parameters: body, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
       if response.result.error == nil {
         guard let data = response.data else {return}
@@ -109,7 +98,6 @@ class AuthService {
         debugPrint(response.result.error as Any)
       }
     }
-    
   }
   
   func findUserByEmail(completion: @escaping CompletionHandler) {
@@ -132,18 +120,6 @@ class AuthService {
     let avatarName = json["avatarName"].stringValue
     let name = json["name"].stringValue
     let email = json["email"].stringValue
-
     UserDataService.instance.setUserData(id: id, avatarColor: avatarColor, avatarName: avatarName, email: email, name: name)
-
-
   }
 }
-
-
-
-
-
-
-
-
-

@@ -1,9 +1,9 @@
 //
 //  KeyboardBoundView.swift
-//  SmackAlpha
+//  Smack
 //
-//  Created by Jonny B on 7/11/17.
-//  Copyright © 2017 Jonny B. All rights reserved.
+//  Created by Mohamed SADAT on 20/11/2017.
+//  Copyright © 2017 Mohsadat. All rights reserved.
 //
 
 import UIKit
@@ -23,7 +23,6 @@ extension UIView {
         
         UIView.animateKeyframes(withDuration: duration, delay: 0.0, options: UIViewKeyframeAnimationOptions(rawValue: curve), animations: {
             self.frame.origin.y += deltaY
-            
         },completion: {(true) in
             self.layoutIfNeeded()
         })

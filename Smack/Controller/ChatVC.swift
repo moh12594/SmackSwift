@@ -17,6 +17,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
   @IBOutlet weak var messagesTable: UITableView!
   @IBOutlet weak var sendButton: UIButton!
   @IBOutlet weak var typingLabel: UILabel!
+  
   // Variables
   var isTyping = false
   
@@ -25,20 +26,16 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     view.bindToKeyboard()
     messagesTable.delegate = self
     messagesTable.dataSource = self
-    
     messagesTable.estimatedRowHeight = 100
     messagesTable.rowHeight = UITableViewAutomaticDimension
     sendButton.isHidden = true
-    
     let tap = UITapGestureRecognizer(target: self, action: #selector(ChatVC.handleTap))
     view.addGestureRecognizer(tap)
     menuButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
     self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
     self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
-  
     NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.channelSelected(_:)), name: NOTIF_CHANNELS_SELECTED, object: nil)
-    
     SocketService.instance.getChatMessage { (newMessage) in
       if newMessage.channelId == MessageService.instance.selectedChannel?.id && AuthService.instance.isLoggedIn {
         MessageService.instance.messages.append(newMessage)
@@ -50,21 +47,10 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
       }
     }
 
-//    SocketService.instance.getChatMessage { (success) in
-//      if success {
-//        self.messagesTable.reloadData()
-//        if MessageService.instance.messages.count > 0 {
-//          let lastIndex = IndexPath(row: MessageService.instance.messages.count - 1, section: 0)
-//          self.messagesTable.scrollToRow(at: lastIndex, at: .bottom, animated: false)
-//        }
-//      }
-//    }
-    
     SocketService.instance.getTypingUsers { (typingUsers) in
       guard let channelId = MessageService.instance.selectedChannel?.id else {return}
       var names = ""
       var numberOfTypers = 0
-      
       for (typingUser, channel) in typingUsers {
         if typingUser != UserDataService.instance.name && channel == channelId {
           if names == "" {
@@ -75,7 +61,6 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
           numberOfTypers += 1
         }
       }
-      
       if numberOfTypers > 0 && AuthService.instance.isLoggedIn == true {
         var verb = "is"
         if numberOfTypers > 1 {
@@ -85,9 +70,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
       } else {
         self.typingLabel.text = ""
       }
-      
     }
-    
     if AuthService.instance.isLoggedIn {
       AuthService.instance.findUserByEmail(completion: { (success) in
         NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)

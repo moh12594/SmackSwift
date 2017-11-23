@@ -18,8 +18,6 @@ class AddChannelVC: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
-    // Do any additional setup after loading the view.
   }
   
   @IBAction func createChannelPressed(_ sender: Any) {

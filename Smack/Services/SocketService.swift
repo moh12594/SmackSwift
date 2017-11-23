@@ -37,7 +37,6 @@ class SocketService: NSObject {
       guard let channelName = dataArray[0] as? String else {return}
       guard let channelDescription = dataArray[1] as? String else {return}
       guard let channelId = dataArray[2] as? String else {return}
-      
       let newChannel = Channel(channelTitle: channelName, channelDescription: channelDescription, id: channelId)
       MessageService.instance.channels.append(newChannel)
       completion(true)
@@ -46,7 +45,6 @@ class SocketService: NSObject {
   
   func sendMessage(messageBody: String, userId: String, channelId: String, completion: @escaping CompletionHandler) {
     let user = UserDataService.instance
-    
     socket.emit("newMessage", messageBody, userId, channelId, user.name, user.avatarName, user.avatarColor)
     completion(true)
   }
@@ -61,7 +59,6 @@ class SocketService: NSObject {
       guard let id = dataArray[6] as? String else {return}
       guard let timeStamp = dataArray[7] as? String else {return}
       let newMessage = Message(message: messageBody, userName: userName, channelId: channelId, userAvatar: userAvatar, userAvatarColor: userAvatarColor, id: id, timeStamp: timeStamp)
-      
       completion(newMessage)
     }
   }
@@ -72,26 +69,4 @@ class SocketService: NSObject {
       completionHandler(typingUsers)
     }
   }
-  
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
